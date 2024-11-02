@@ -1,6 +1,4 @@
 from fastapi import APIRouter
-
-from schema.user import User
 from services.authentication import AuthenticationService
 
 router = APIRouter(prefix="/auth")
@@ -17,4 +15,4 @@ async def login():
 
 @router.get("/profile")
 async def profile():
-    return AuthenticationService().get_user()
+    return AuthenticationService().get_user(1)
