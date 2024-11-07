@@ -10,3 +10,8 @@ class Entry(Base):
 
     def to_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+    
+    def create_entry(self, content: str):
+        pass
+        # create entry 
+        # write into db
