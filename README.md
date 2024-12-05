@@ -1,4 +1,36 @@
 # TODO
+
+## Installation
+
+### macOS
+
+- Setup python environment:
+
+```bash
+python3 -m venv env
+source env/bin/activate
+pip3 install --upgrade pip
+
+pip3 install psycopg2-binary
+pip3 install -r requirements.txt
+```
+
+- Install [Postgresql](https://postgresapp.com/downloads.html)
+```bash
+echo "POSTGRES_USERNAME=<your_db_username>" >> .env
+echo "POSTGRES_PASSWORD=<your_db_password>" >> .env
+```
+
+- Generate [OpenAI API Key](https://platform.openai.com/docs/quickstart)
+```bash
+echo "OPENAI_API_KEY=<your_api_key_here>" >> .env
+```
+
+- Run the server locally
+```bash
+python3 app/main.py
+```
+
 ## v0 - Generate periodic summary from journal entry
 
 ### Components
