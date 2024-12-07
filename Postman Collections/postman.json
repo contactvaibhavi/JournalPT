@@ -84,7 +84,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/journal"
+								"url": "{{HOST}}/api/v1/journal"
 							},
 							"response": []
 						},
@@ -97,7 +97,7 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": "{{HOST}}/api/journal"
+								"url": "{{HOST}}/api/v1/journal"
 							},
 							"response": []
 						}
@@ -116,7 +116,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/llm"
+								"url": "{{HOST}}/api/v1/llm"
 							},
 							"response": []
 						}
@@ -132,7 +132,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{HOST}}/api"
+						"url": "{{HOST}}/api/v1"
 					},
 					"response": []
 				}
