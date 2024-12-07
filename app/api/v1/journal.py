@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from services.journal_service import JournalService
 from schema.entry import Entry
 
-router = APIRouter(prefix="/journal")
+router = APIRouter()
 
 
 @router.get("/")

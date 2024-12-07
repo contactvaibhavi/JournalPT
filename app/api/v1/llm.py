@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/llm")
+router = APIRouter()
 
 
 @router.get("/")

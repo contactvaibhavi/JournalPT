@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/embedding")
+router = APIRouter()
 
 
 @router.get("/")

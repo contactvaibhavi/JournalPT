@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from services.authentication import AuthenticationService
 
-router = APIRouter(prefix="/auth")
+router = APIRouter()
 
 
 @router.get("/")
