@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-from app.schema import user
 from services.authentication import AuthenticationService
 from pydantic import BaseModel
 

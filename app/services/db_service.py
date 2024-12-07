@@ -14,6 +14,7 @@ def init_db(engine: Engine) -> scoped_session[Session]:
         create_database(engine.url)
     with engine.begin() as connection:
         connection.execute(text('CREATE EXTENSION IF NOT EXISTS vector'))
+    print(Base.metadata.tables)
     Base.metadata.create_all(engine)
     session_factory = sessionmaker(bind=engine)
     ScopedSession = scoped_session(session_factory)
