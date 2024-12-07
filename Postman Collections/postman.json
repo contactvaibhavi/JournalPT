@@ -20,7 +20,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/auth"
+								"url": "{{API}}/auth"
 							},
 							"response": []
 						},
@@ -33,7 +33,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/auth/login"
+								"url": "{{API}}/auth/login"
 							},
 							"response": []
 						},
@@ -46,7 +46,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/auth/profile"
+								"url": "{{API}}/auth/profile"
 							},
 							"response": []
 						}
@@ -65,7 +65,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/embedding"
+								"url": "{{API}}/embedding"
 							},
 							"response": []
 						}
@@ -84,7 +84,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/v1/journal"
+								"url": "{{API}}/journal"
 							},
 							"response": []
 						},
@@ -97,7 +97,7 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": "{{HOST}}/api/v1/journal"
+								"url": "{{API}}/journal"
 							},
 							"response": []
 						}
@@ -116,7 +116,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{HOST}}/api/v1/llm"
+								"url": "{{API}}/llm"
 							},
 							"response": []
 						}
@@ -132,7 +132,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{HOST}}/api/v1"
+						"url": "{{API}}"
 					},
 					"response": []
 				}
@@ -157,7 +157,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "14cfd79c-cf6b-4d28-8fce-c3ceb34cf7d0",
+				"id": "fd3feb33-fed5-418f-9f1e-329d73f02f5e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -168,7 +168,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d67eed89-e96b-437d-b0db-66243a391bab",
+				"id": "0ccd43c2-455f-4924-b862-4369c3ef1cae",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -181,6 +181,11 @@
 		{
 			"key": "HOST",
 			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "API",
+			"value": "http://localhost:8000/api/v1",
 			"type": "string"
 		}
 	]
