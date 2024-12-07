@@ -146,6 +146,34 @@
 								"url": "{{API}}/journal/create"
 							},
 							"response": []
+						},
+						{
+							"name": "read",
+							"id": "a34e3e8f-7c46-47bd-a3dd-2b9d185dbcad",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API}}/journal/read?user_id=0",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"journal",
+										"read"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"id": "010e711f-3c3a-44f4-ab71-3a2d9a43c716"
