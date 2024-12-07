@@ -1,8 +1,23 @@
 import os
 import urllib.parse
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import DeclarativeBase, sessionmaker
+from sqlalchemy import Engine, create_engine, text
+from sqlalchemy.orm import DeclarativeBase, sessionmaker, scoped_session, Session
 from sqlalchemy_utils import create_database, database_exists
+
+
+class Base(DeclarativeBase):
+    pass
+
+def init_db(engine: Engine) -> scoped_session[Session]:
+    print('init_db')
+    if not database_exists(engine.url):
+        create_database(engine.url)
+    with engine.begin() as connection:
+        connection.execute(text('CREATE EXTENSION IF NOT EXISTS vector'))
+    Base.metadata.create_all(engine)
+    session_factory = sessionmaker(bind=engine)
+    ScopedSession = scoped_session(session_factory)
+    return ScopedSession
 
 POSTGRES_USERNAME = os.getenv('POSTGRES_USERNAME')
 POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD', '')
@@ -15,42 +30,5 @@ database_url = f"postgresql://{POSTGRES_USERNAME}:{encoded_password}" +\
     f"@{POSTGRES_HOST}:{POSTGRES_PORT}/{DATABASE_NAME}"
 
 print(database_url)
-
-class DbService:
-    engine = None
-    sessionLocal = None
-
-    def create_db(self):
-        print("create_db")
-        if self.engine is None:
-            self.engine = create_engine(database_url)
-        
-        if not database_exists(self.engine.url):
-            create_database(self.engine.url)
-        
-        with self.engine.begin() as connection:
-            connection.execute(text('CREATE EXTENSION IF NOT EXISTS vector'))
-
-        try:
-            print(Base.metadata.tables)
-            Base.metadata.create_all(self.engine)
-        except Exception as e:
-            print(f"Error creating tables: {e}")
-    
-
-    def get_db(self):
-        if self.engine is None:
-            self.create_db()
-        
-        sessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
-        db = sessionLocal()
-
-        try:
-            yield db
-        finally:
-            db.close()
-        
-
-class Base(DeclarativeBase):
-    pass
-
+engine = create_engine(database_url)
+DbSession = init_db(engine)

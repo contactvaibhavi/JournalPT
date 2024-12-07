@@ -1,22 +1,12 @@
-from contextlib import asynccontextmanager
 from fastapi import FastAPI
 import uvicorn
 from api.router import router
 from dotenv import load_dotenv
-from services.db_service import DbService
+
 
 load_dotenv()
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    print("Init lifespan")
-    DB_SERVICE = DbService()
-    DB_SERVICE.create_db()
-    db = DB_SERVICE.get_db()
-    yield
-    print("close")
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 app.include_router(router, prefix="/api")
 
 
