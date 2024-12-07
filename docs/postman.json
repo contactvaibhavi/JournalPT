@@ -68,7 +68,22 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{API}}/auth/profile"
+								"url": {
+									"raw": "{{API}}/auth/profile?user_email=abcd@xyz.com",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									],
+									"query": [
+										{
+											"key": "user_email",
+											"value": "abcd@xyz.com"
+										}
+									]
+								}
 							},
 							"response": []
 						}
