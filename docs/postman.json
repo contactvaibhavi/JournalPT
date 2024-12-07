@@ -25,7 +25,7 @@
 							"response": []
 						},
 						{
-							"name": "/ Copy",
+							"name": "register",
 							"id": "02cfa7b8-baa2-4187-b09e-ae677b95e5cd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -34,24 +34,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "user_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "user_name",
-											"value": "John Doe",
-											"type": "text"
-										},
-										{
-											"key": "user_age",
-											"value": "42",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"John Doe\",\n    \"user_age\": 42\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": "{{API}}/auth/register"
 							},
