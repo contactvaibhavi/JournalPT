@@ -136,7 +136,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"user_id\": 0,\n    \"content\": \"Today was a good day\",\n    \"date\": \"2024-12-07\"\n}",
+									"raw": "{\n    \"user_id\": 0,\n    \"content\": \"Today was a very good day\",\n    \"date\": \"2024-12-08\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -195,14 +195,38 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "summarise",
 							"id": "b6850978-7b94-434b-b352-eb9a4d238627",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{API}}/llm/summarise?user_id=0&days=2024-12-08&days=2024-12-07",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"llm",
+										"summarise"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "0"
+										},
+										{
+											"key": "days",
+											"value": "2024-12-08"
+										},
+										{
+											"key": "days",
+											"value": "2024-12-07"
+										}
+									]
+								}
 							},
 							"response": []
 						}
