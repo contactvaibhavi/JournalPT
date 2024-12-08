@@ -201,32 +201,18 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{API}}/llm/summarise?user_id=0&days=2024-12-08&days=2024-12-07",
-									"host": [
-										"{{API}}"
-									],
-									"path": [
-										"llm",
-										"summarise"
-									],
-									"query": [
-										{
-											"key": "user_id",
-											"value": "0"
-										},
-										{
-											"key": "days",
-											"value": "2024-12-08"
-										},
-										{
-											"key": "days",
-											"value": "2024-12-07"
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 0,\n    \"days\": [\n        \"2024-12-08\",\n        \"2024-12-06\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
-								}
+									}
+								},
+								"url": "{{API}}/llm/summarise"
 							},
 							"response": []
 						}
