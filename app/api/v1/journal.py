@@ -1,7 +1,7 @@
 import datetime
 from fastapi import APIRouter
 from pydantic import BaseModel
-from services.journal_service import JournalService
+from services.journal import JournalService
 
 router = APIRouter()
 

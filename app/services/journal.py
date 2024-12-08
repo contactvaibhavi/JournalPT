@@ -2,7 +2,7 @@ import datetime
 from typing import Union
 
 from sqlmodel import select, desc
-from services.db_service import DbSession
+from services.db import DbSession
 from schema.entry import Entry
 
 class JournalService:

@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from services.authentication import AuthenticationService
+from services.auth import AuthenticationService
 from pydantic import BaseModel
 
 router = APIRouter()

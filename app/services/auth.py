@@ -1,5 +1,5 @@
 from sqlalchemy import select
-from services.db_service import DbSession
+from services.db import DbSession
 from schema.user import User
 import bcrypt 
 

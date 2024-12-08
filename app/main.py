@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import uvicorn
 from api.router import router
 from dotenv import load_dotenv
-from services.db_service import init_db, engine
+from services.db import init_db, engine
 
 load_dotenv()
 

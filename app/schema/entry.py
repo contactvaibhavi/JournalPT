@@ -1,5 +1,5 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Date
-from services.db_service import Base
+from services.db import Base
 
 
 class Entry(Base):
