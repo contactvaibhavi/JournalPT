@@ -193,6 +193,18 @@
 								"url": "{{API}}/llm"
 							},
 							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "b6850978-7b94-434b-b352-eb9a4d238627",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "61a9a6f8-1f7c-44c9-a4af-cae380d0941a"
