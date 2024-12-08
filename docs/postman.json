@@ -215,6 +215,66 @@
 								"url": "{{API}}/llm/summarise"
 							},
 							"response": []
+						},
+						{
+							"name": "aigenerated",
+							"id": "934402f9-c928-45d3-872c-cc6a13c1a362",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API}}/llm/aigenerated?aigen_id=2",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"llm",
+										"aigenerated"
+									],
+									"query": [
+										{
+											"key": "aigen_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "calls",
+							"id": "34d49286-b6dd-421f-b9b7-de6038a54854",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API}}/llm/calls?limit=5&skip=0",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"llm",
+										"calls"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"id": "61a9a6f8-1f7c-44c9-a4af-cae380d0941a"
