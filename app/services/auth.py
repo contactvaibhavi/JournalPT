@@ -7,9 +7,11 @@ def hash_password(password: str):
     return bcrypt.hashpw(password.encode(), bcrypt.gensalt())
 
 class AuthenticationService:
+    def __init__(self):
+        self.db = DbSession()
+
     def create_user(self, user_email: str, user_password: str, user_name: str, user_age: int):
-        db = DbSession()
-        user_id = db.query(User.user_id).count()
+        user_id = self.db.query(User.user_id).count()
         user = User(
             user_email=user_email,
             user_id=user_id, 
@@ -17,11 +19,11 @@ class AuthenticationService:
             user_age=user_age,
             user_hash=hash_password(user_password)
         )
-        db.add(user)
-        db.commit()
+        self.db.add(user)
+        self.db.commit()
         return user_id
 
     def get_user(self, user_email: str): 
         query = select(User).where(User.user_email == user_email)
-        for row in DbSession().execute(query):
+        for row in self.db.execute(query):
             return row._asdict()
